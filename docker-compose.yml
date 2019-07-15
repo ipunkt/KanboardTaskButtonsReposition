@@ -1,0 +1,27 @@
+version: '2'
+services:
+  kanboard:
+    image: kanboard/kanboard:latest
+    ports:
+      - "80:80"
+    volumes:
+      - .:/var/www/app/plugins/PlusButtonReposition
+      - .:/usr/share/php7
+    environment:
+      DATABASE_URL: mysql://kb:kb-secret@db/kanboard
+  db:
+    image: mariadb:latest
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: kanboard
+      MYSQL_USER: kb
+      MYSQL_PASSWORD: kb-secret
+  rights:
+    image: busybox
+    command: sh -c 'while true ; do chown -R $${USER_ID}.$${GROUP_ID} /target ; sleep 2s ; done'
+    volumes:
+      - .:/target
+    environment:
+      - USER_ID=10017
+      - GROUP_ID=10003
