@@ -1,3 +1,3 @@
 # Plus Button Positionierungsänderung
 
-Hinzufügen eines Eintrages im jeweiligen Bereich ist direkt am Bereich möglich.
+This Plugin makes it possible to reassemble task template to move some action buttons from sidebar list to corresponding accordion section in sidebar content.
