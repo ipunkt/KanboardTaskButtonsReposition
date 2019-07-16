@@ -1,0 +1,13 @@
+.sidebar-content .action-list {
+    margin: 15px 0 15px -5px;
+    list-style-type: none;
+}
+
+.action-list > a {
+    color: grey;
+    text-decoration: none;
+}
+
+.action-list > a:hover {
+    color: #343a40;
+}
