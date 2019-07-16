@@ -14,7 +14,7 @@ class Plugin extends Base
         $this->template->setTemplateOverride('task_external_link/show', 'TaskButtonsReposition:task_external_link/show');
         $this->template->setTemplateOverride('task_internal_link/show', 'TaskButtonsReposition:task_internal_link/show');
         $this->template->setTemplateOverride('subtask/show', 'TaskButtonsReposition:subtask/show');
-        $this->hook->on("template:layout:css", array("template" => "plugins/TaskButtonsReposition/Assets/skin.css"));
+        $this->hook->on("template:layout:css", array("template" => "plugins/TaskButtonsReposition/Assets/css/skin.css"));
     }
 
     public function getPluginName()
