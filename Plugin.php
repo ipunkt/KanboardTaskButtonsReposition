@@ -8,18 +8,22 @@ class Plugin extends Base
 {
     public function initialize()
     {
-        $this->template->setTemplateOverride('task/sidebar', 'TaskButtonsReposition:task/sidebar');
-        $this->template->setTemplateOverride('task/description', 'TaskButtonsReposition:task/description');
-        $this->template->setTemplateOverride('task_file/show', 'TaskButtonsReposition:task_file/show');
-        $this->template->setTemplateOverride('task_external_link/show', 'TaskButtonsReposition:task_external_link/show');
-        $this->template->setTemplateOverride('task_internal_link/show', 'TaskButtonsReposition:task_internal_link/show');
-        $this->template->setTemplateOverride('subtask/show', 'TaskButtonsReposition:subtask/show');
+        $this->template->hook->attach("template:task:show:before-subtasks",
+            "TaskButtonsReposition:task/description");
+        $this->template->hook->attach("template:task:show:before-internal-links",
+            "TaskButtonsReposition:subtask/show");
+        $this->template->hook->attach("template:task:show:before-external-links",
+            "TaskButtonsReposition:task_internal_link/show");
+        $this->template->hook->attach("template:task:show:before-attachments",
+            "TaskButtonsReposition:task_external_link/show");
+        $this->template->hook->attach("template:task:show:before-comments",
+            "TaskButtonsReposition:task_file/show");
         $this->hook->on("template:layout:css", array("template" => "plugins/TaskButtonsReposition/Assets/css/skin.css"));
     }
 
     public function getPluginName()
     {
-        return 'TaskButtonsReposition';
+        return 'KanboardTaskButtonsReposition';
     }
 
     public function getPluginDescription()
@@ -29,7 +33,7 @@ class Plugin extends Base
 
     public function getPluginAuthor()
     {
-        return 'ipunkt Business Solutions';
+        return 'Andrei Volgin, ipunkt Business Solutions';
     }
 
     public function getPluginVersion()
@@ -39,6 +43,6 @@ class Plugin extends Base
 
     public function getPluginHomepage()
     {
-        return '';
+        return 'https://www.ipunkt.biz/unternehmen/opensource';
     }
 }
