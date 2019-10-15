@@ -28,7 +28,7 @@ class Plugin extends Base
 
     public function getPluginDescription()
     {
-        return 'By this Plugin some action buttons are moved from sidebar list to corresponding accordion section in sidebar content.';
+        return 'By this Plugin some action buttons are moved from sidebar list to corresponding accordion section in Task content view.';
     }
 
     public function getPluginAuthor()
