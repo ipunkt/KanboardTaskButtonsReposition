@@ -1,3 +1,3 @@
 # Kanboard: Task Buttons Reposition
 
-This Plugin makes it possible to reassemble task template to move some action buttons from sidebar list to corresponding accordion section in sidebar content.
+By this Plugin some action buttons are duplicated from sidebar list to corresponding accordion section in Task content view.
