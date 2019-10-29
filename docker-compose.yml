@@ -5,7 +5,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - .:/var/www/app/plugins/TaskButtonsReposition
+      - .:/var/www/app/plugins/KanboardTaskButtonsReposition
       - .:/usr/share/php7
     environment:
       DATABASE_URL: mysql://kb:kb-secret@db/kanboard
