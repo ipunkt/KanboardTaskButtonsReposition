@@ -6,9 +6,9 @@ services:
       - "80:80"
     volumes:
       - .:/var/www/app/plugins/TaskButtonsReposition
-      - .:/usr/share/php7
       - ./docker/conf.d/local.ini:/etc/php7/conf.d/local.ini
       - ./Data/config.php:/var/www/app/data/config.php
+      - .:/usr/share/php7
     environment:
       DATABASE_URL: mysql://kb:kb-secret@db/kanboard
   db:
